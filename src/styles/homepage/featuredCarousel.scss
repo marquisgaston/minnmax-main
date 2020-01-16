@@ -1,0 +1,75 @@
+
+
+.carousel-wrapper {
+    margin-top: 2rem;
+
+    .carousel, .slide {
+        width: 84rem;
+
+        .carousel-indicators {
+            @media only screen and (min-width: $phone-height){
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: $ipad-height) {
+            width: 95vw;
+        }
+
+        .carousel-inner {
+
+            .card-img-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            @media only screen and (max-width: $ipad-height) {
+                    flex-direction: column;
+                }
+
+                img {
+                    width: 43vw;
+
+                    @media only screen and (max-width: $ipad-height) {
+                        width: 90vw;
+                        height: 22rem;
+                    }
+
+                    @media only screen and (max-width: $phone-height) {
+                        width: 92vw;
+                        height: 47vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        background-color: rgba(0,0,0,.2);
+        width: 4rem;
+        
+        @media only screen and (min-width: $ipad-height) {
+            &:hover {
+                background-color: $minnmax-green;
+            }
+        }
+
+        @media only screen and (max-width: $ipad-height) {
+            background-color: rgba(0,0,0,0);
+            span {
+                background-color: rgba(0,0,0,0.5);
+                width: 4rem;
+                height: 6rem;
+            }
+        }
+
+        @media only screen and (max-width: $phone-height) {
+            background-color: rgba(0,0,0,0);
+            span {
+                background-color: black;
+                width: 2rem;
+                height: 3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.navbar {
+    background-color: $minnmax-green;
+    height: 3rem;
+    font-size: 1.2rem;
+    width: 100vw;
+    z-index: 2;
+
+    &__brand-image {
+        height: 100%;
+        img {
+            height: 2.2rem;
+            margin-top: -1rem;
+        }
+    }
+    .navbar-nav {
+        .nav-link {
+            color: white;
+        }
+    }
+
+    .navbar-nav, div {
+        @media only screen and (max-width: $ipad-height) {
+            background-color: $minnmax-green;
+        }
+    }
+
+    .login-button {
+        button {
+            border-radius: 5px;
+            color: $minnmax-green;
+        }
+        @media only screen and (min-width: $ipad-height) {
+            margin-right: 1.5rem;
+        }
+    }
+    .form-inline {
+        button {
+            border-color: white;
+            color: white;
+
+            &:hover {
+                background-color: darkgreen;
+            }
+        }
+    }
+}
