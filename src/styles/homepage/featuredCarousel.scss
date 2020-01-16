@@ -1,10 +1,18 @@
 
 
 .carousel-wrapper {
-    margin-top: 2rem;
+    margin-top: 1em;
 
     .carousel, .slide {
-        width: 84rem;
+        width: 57em;
+
+        @media only screen and (max-width: $ipad-height) {
+            width: 29.5em;
+        }
+        
+        @media only screen and (max-width: $phone-height){
+            width: 20em;
+        }
 
         .carousel-indicators {
             @media only screen and (min-width: $phone-height){
@@ -12,11 +20,8 @@
             }
         }
 
-        @media only screen and (max-width: $ipad-height) {
-            width: 95vw;
-        }
-
         .carousel-inner {
+            
 
             .card-img-wrapper {
                 display: flex;
@@ -28,15 +33,15 @@
                 }
 
                 img {
-                    width: 43vw;
+                    width: 32.4em;
 
                     @media only screen and (max-width: $ipad-height) {
-                        width: 90vw;
-                        height: 22rem;
+                        width: 27.1em;
+                        height: 14em;
                     }
 
                     @media only screen and (max-width: $phone-height) {
-                        width: 92vw;
+                        width: 19em;
                         height: 47vw;
                     }
                 }
@@ -46,7 +51,7 @@
 
     .carousel-control-prev, .carousel-control-next {
         background-color: rgba(0,0,0,.2);
-        width: 4rem;
+        width: 2em;
         
         @media only screen and (min-width: $ipad-height) {
             &:hover {
@@ -58,8 +63,8 @@
             background-color: rgba(0,0,0,0);
             span {
                 background-color: rgba(0,0,0,0.5);
-                width: 4rem;
-                height: 6rem;
+                width: 2em;
+                height: 4em;
             }
         }
 
@@ -67,8 +72,8 @@
             background-color: rgba(0,0,0,0);
             span {
                 background-color: black;
-                width: 2rem;
-                height: 3rem;
+                width: 7em;
+                height: 7em;
             }
         }
     }

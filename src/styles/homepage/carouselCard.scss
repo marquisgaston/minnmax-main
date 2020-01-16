@@ -1,7 +1,7 @@
 .card-img-wrapper {
     .card {
-        width: 28rem;
-        height: 26.5rem;
+        width: 19em;
+        height: 18.3em;
 
         @media only screen and (max-width: $ipad-height) {
             width: 90vw;
@@ -9,7 +9,7 @@
         }
 
         @media only screen and (max-width: $phone-height) {
-            width: 92vw;
+            width: 18.8em;
 
             .card-footer {
                 display: none;
@@ -18,7 +18,7 @@
         .card-header {
 
             @media only screen and (max-width: $ipad-height){
-                font-size: 0.8rem;
+                font-size: 0.8em;
             }
             
         }
@@ -34,11 +34,11 @@
             }
 
             .card-text {
-                font-size: 0.8rem;
+                font-size: 0.55em;
 
                 @media only screen and (max-width: $ipad-height){
-                    margin-top: -.7rem;
-                    font-size: 0.8rem;
+                    margin-top: -.7em;
+                    font-size: 0.65em;
                 }
             }
         }
