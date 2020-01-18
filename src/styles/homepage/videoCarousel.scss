@@ -1,0 +1,56 @@
+.video-carousel {
+    margin-top: 2em;
+
+    .carousel-title {
+        margin-bottom: 1em;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+        background-color: rgba(0,0,0,.2);
+        width: 2em;
+        
+    }
+
+    .slide {
+        width: 65em;
+        max-width: 90vw;
+
+        .item-wrapper {
+            display: flex;
+            justify-content: space-around;
+
+            @media only screen and (max-width: $ipad-height) {
+                
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                margin: 0 3em;
+                grid-row-gap: 1em;
+                
+            }
+
+            .card {
+                height: 10em;
+                max-height: 10em;
+
+                @media only screen and (max-width: $ipad-height){
+                    width: 6em;
+                }
+
+                @media only screen and (max-width: $phone-height){
+                    height: 8em;
+                }
+
+                .card-body {
+                    @media only screen and (max-width: $phone-height){
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+

@@ -1,4 +1,7 @@
-import{ GET_FEATURED_CONTENT } from './types';
+import{ 
+    GET_FEATURED_CONTENT,
+    GET_CAROUSEL_CONTENT
+ } from './types';
 
 export function getFeaturedContent (homePageVideosObjectList) {
     return ({
@@ -6,3 +9,12 @@ export function getFeaturedContent (homePageVideosObjectList) {
         payload: homePageVideosObjectList
     })
 }
+
+export function getCarouselContent (videoCarouselVideosObjectList) {
+    console.log(videoCarouselVideosObjectList)
+    return ({
+        type: GET_CAROUSEL_CONTENT,
+        payload: videoCarouselVideosObjectList
+    })
+}
+

@@ -46,7 +46,7 @@ class Carousel extends Component {
                                     {one.map ( one => { return (one + " ")})}
                                 </div>
                         </div>} 
-                        description={`${this.props.slide.snippet.description.substring(0,590)}...`}
+                        description={`${this.props.slide.snippet.description.substring(0,570)}...`}
                         showType={zero.showTypeToBeRendered !== "" ? zero.showTypeToBeRendered : null}/>
         </div>
          );

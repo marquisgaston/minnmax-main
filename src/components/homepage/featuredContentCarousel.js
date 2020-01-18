@@ -7,8 +7,8 @@ import CarouselSlide from './carouselSlide';
 
 class FeaturedContentCarousel extends Component {
     state = {  }
-    render() { 
-
+    render() {
+        
         const renderContent = () => {
             return (
                 this.props.homePageVideosObjectList.map(item => {

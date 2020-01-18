@@ -1,6 +1,3 @@
-@import './styles/variables.scss';
-@import './styles/main.scss';
-
 .App {
   text-align: center;
 }
@@ -28,3 +25,5 @@
     transform: rotate(360deg);
   }
 }
+@import './styles/variables.scss';
+@import './styles/main.scss';

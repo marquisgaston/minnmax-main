@@ -2,9 +2,12 @@
 
 .carousel-wrapper {
     margin-top: 1em;
+    display: flex;
+    justify-content: center;
 
     .carousel, .slide {
         width: 57em;
+        max-width: 90vw;
 
         @media only screen and (max-width: $ipad-height) {
             width: 29.5em;

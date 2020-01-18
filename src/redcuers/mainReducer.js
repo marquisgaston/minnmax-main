@@ -1,7 +1,11 @@
-import { GET_FEATURED_CONTENT} from '../actions/types';
+import { 
+    GET_FEATURED_CONTENT,
+    GET_CAROUSEL_CONTENT
+} from '../actions/types';
 
 const INITIAL_STATE = {
-    homePageVideosObjectList: []
+    homePageVideosObjectList: [],
+    VideosObjectList: []
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -10,6 +14,12 @@ export default function(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 homePageVideosObjectList: action.payload
+            }
+        case GET_CAROUSEL_CONTENT:
+            console.log("AP", action.payload)
+            return {
+                ...state,
+                VideosObjectList: action.payload
             }
 
         default: return state

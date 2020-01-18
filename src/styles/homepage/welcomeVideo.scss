@@ -1,0 +1,16 @@
+.welcome-video {
+    display: flex;
+    flex-direction: column;
+    color: $minnmax-green;
+    align-items: center;
+    margin-top: 1em;
+
+    html {
+        width: 10rem;
+    }
+
+    
+@media only screen and (max-width: $ipad-height) {
+    display: none;
+    }
+}

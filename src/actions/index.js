@@ -1,5 +1,9 @@
-import { getFeaturedContent } from './main';
+import { 
+    getFeaturedContent,
+    getCarouselContent
+ } from './main';
 
 export {
-    getFeaturedContent
+    getFeaturedContent,
+    getCarouselContent
 }
