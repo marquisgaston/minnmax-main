@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Carousel, CarouselItem, Card, Button } from 'react-bootstrap';
+import { Carousel, CarouselItem } from 'react-bootstrap';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';

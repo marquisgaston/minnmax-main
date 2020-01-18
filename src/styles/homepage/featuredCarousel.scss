@@ -9,16 +9,16 @@
         width: 57em;
         max-width: 90vw;
 
-        @media only screen and (max-width: $ipad-height) {
+        @media only screen and (max-width: $ipad-width) {
             width: 29.5em;
         }
         
-        @media only screen and (max-width: $phone-height){
+        @media only screen and (max-width: $phone-width){
             width: 20em;
         }
 
         .carousel-indicators {
-            @media only screen and (min-width: $phone-height){
+            @media only screen and (min-width: $phone-width){
                 display: none;
             }
         }
@@ -31,19 +31,19 @@
                 justify-content: center;
                 align-items: center;
 
-            @media only screen and (max-width: $ipad-height) {
+            @media only screen and (max-width: $ipad-width) {
                     flex-direction: column;
                 }
 
                 img {
                     width: 32.4em;
 
-                    @media only screen and (max-width: $ipad-height) {
+                    @media only screen and (max-width: $ipad-width) {
                         width: 27.1em;
                         height: 14em;
                     }
 
-                    @media only screen and (max-width: $phone-height) {
+                    @media only screen and (max-width: $phone-width) {
                         width: 19em;
                         height: 47vw;
                     }
@@ -56,13 +56,13 @@
         background-color: rgba(0,0,0,.2);
         width: 2em;
         
-        @media only screen and (min-width: $ipad-height) {
+        @media only screen and (min-width: $ipad-width) {
             &:hover {
                 background-color: $minnmax-green;
             }
         }
 
-        @media only screen and (max-width: $ipad-height) {
+        @media only screen and (max-width: $ipad-width) {
             background-color: rgba(0,0,0,0);
             span {
                 background-color: rgba(0,0,0,0.5);
@@ -71,7 +71,7 @@
             }
         }
 
-        @media only screen and (max-width: $phone-height) {
+        @media only screen and (max-width: $phone-width) {
             background-color: rgba(0,0,0,0);
             span {
                 background-color: black;

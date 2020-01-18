@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player';
 
 class WelcomeVideo extends Component {
     state = {  }
@@ -9,7 +10,7 @@ class WelcomeVideo extends Component {
                     <h3>INTRODUCING MINNMAX</h3>
                 </div>
                 {/* autoplay; */}
-                <iframe className="welcome-iframe" title="welcome video" width="560" height="315" src="https://www.youtube.com/embed/BWgSxte-cMs?" frameBorder="0"  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <ReactPlayer url ='ttps://youtu.be/BWgSxte-cMs'/>
             
             </div>
          );

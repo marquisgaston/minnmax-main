@@ -19,7 +19,7 @@
     }
 
     .navbar-nav, div {
-        @media only screen and (max-width: $ipad-height) {
+        @media only screen and (max-width: $ipad-width) {
             background-color: $minnmax-green;
         }
     }
@@ -29,7 +29,7 @@
             border-radius: 5px;
             color: $minnmax-green;
         }
-        @media only screen and (min-width: $ipad-height) {
+        @media only screen and (min-width: $ipad-width) {
             margin-right: 1.5rem;
         }
     }

@@ -3,7 +3,18 @@ import {
     getCarouselContent
  } from './main';
 
+ import {
+    changePlayerUrl,
+    loadVideoInfo,
+    checkIsPlaying,
+    checkShowThumb
+ } from './player'
+
 export {
     getFeaturedContent,
-    getCarouselContent
+    getCarouselContent,
+    changePlayerUrl,
+    loadVideoInfo,
+    checkIsPlaying,
+    checkShowThumb
 }

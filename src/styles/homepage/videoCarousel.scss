@@ -11,15 +11,20 @@
         
     }
 
+    .carousel-indicators {
+            
+    }
+
     .slide {
         width: 65em;
         max-width: 90vw;
+
 
         .item-wrapper {
             display: flex;
             justify-content: space-around;
 
-            @media only screen and (max-width: $ipad-height) {
+            @media only screen and (max-width: $ipad-width) {
                 
                 display: grid;
                 grid-template-rows: 1fr 1fr;
@@ -34,16 +39,16 @@
                 height: 10em;
                 max-height: 10em;
 
-                @media only screen and (max-width: $ipad-height){
+                @media only screen and (max-width: $ipad-width){
                     width: 6em;
                 }
 
-                @media only screen and (max-width: $phone-height){
+                @media only screen and (max-width: $phone-width){
                     height: 8em;
                 }
 
                 .card-body {
-                    @media only screen and (max-width: $phone-height){
+                    @media only screen and (max-width: $phone-width){
                         display: none;
                     }
                 }

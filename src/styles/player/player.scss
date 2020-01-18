@@ -1,0 +1,108 @@
+.video-page-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2em;;
+
+    .video-panel  {
+        display: flex;
+        max-width: 86vw;
+
+        @media only screen and (max-width: $ipad-width){
+            flex-direction: column;
+        }
+
+        .info-panel {
+            color: black;
+            .card {
+
+                height: 100%;
+
+                .card-img-top {
+
+                    @media only screen and (max-width: $ipad-width){
+                        display: none;
+                    }
+                }
+
+                .card-body {
+                    
+                margin: 0 .7em;
+                }
+
+                .card-text {
+                    font-size: 0.75em;
+                }
+            }
+
+        }
+
+        .video-player-wrapper {
+            
+            @media only screen and (max-width: $ipad-width){
+                width: 86vw;
+                height: 49vw;
+            }
+
+            iframe {
+                @media only screen and (max-width: $ipad-width){
+                    width: 86vw;
+                    height: 49vw;
+                }
+            }
+        }
+
+    }
+}
+
+// .des-tooltip {
+//     width: 400px;
+// }
+
+// .info-panel {
+//     display: grid;
+//     justify-items: center;
+//     width: 23vw;
+//     padding: 0px 30px;
+//     background-image: linear-gradient(white, lightgrey, darkgrey, grey);
+
+//     @media only screen and (min-width: 421px) {
+        
+//     }
+
+//     .title-wrapper {
+//         display: flex;
+//         justify-content: center;
+        
+
+//         .title {
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             align-items: center;
+//             font-size: 1.3vw;
+//             margin-bottom: -4trem;
+
+//         }
+//     }
+
+//     .show-type {
+//         font-size: 1.3vw;
+
+//         margin-top: 2vw;
+//     }
+
+//     .description {
+//         font-size: 0.9rem;
+//         height: 14rem;
+//     }
+
+//     .vid-thumb {
+//         .bottom-img {
+//             height: 11rem;
+//             img {
+//                 width: 17vw;
+//             }
+//         }
+//     }
+
+// }
