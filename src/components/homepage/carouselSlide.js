@@ -47,7 +47,8 @@ class Carousel extends Component {
                                 </div>
                         </div>} 
                         description={`${this.props.slide.snippet.description.substring(0,570)}...`}
-                        showType={zero.showTypeToBeRendered !== "" ? zero.showTypeToBeRendered : null}/>
+                        showType={zero.showTypeToBeRendered !== "" ? zero.showTypeToBeRendered : null}
+                        videoId={this.props.slide.snippet.resourceId.videoId} snippet={this.props.slide.snippet}/>
         </div>
          );
     }

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import history from '../../utils/history';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+import { act } from 'react-dom/test-utils';
 
 class CarouselCard extends Component {
     state = {  }
@@ -14,11 +18,13 @@ class CarouselCard extends Component {
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary" onClick={() => {history.push(`/video-player/${this.props.videoId}`); this.props.loadVideoInfo(this.props.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${this.props.videoId}`)}} >Go somewhere</Button>
             </Card.Footer>
         </Card>
          );
     }
 }
+
+CarouselCard = connect(null, actions)(CarouselCard)
  
 export default CarouselCard;

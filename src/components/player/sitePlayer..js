@@ -8,8 +8,6 @@ class SitePlayer extends Component {
     render() {
     return <ReactPlayer 
     onPlay={() => {this.props.checkIsPlaying(true);}}
-    onPause={() => {this.props.checkIsPlaying(false);}}
-    onEnded={() => {this.props.checkIsPlaying(false);}}
     url={this.props.url} 
     pip={true} width="65vw" 
     height="36.4vw" 
