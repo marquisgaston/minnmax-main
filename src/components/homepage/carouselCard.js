@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap';
 import history from '../../utils/history';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { act } from 'react-dom/test-utils';
 
 class CarouselCard extends Component {
     state = {  }

@@ -70,7 +70,7 @@ class VideoPage extends Component {
             {this.props.playerUrl ? 
                 <div className="video-panel">
                     <div className="video-player-wrapper">
-                        {this.props.playerUrl ? <SitePlayer url={this.props.playerUrl} /> : <h1 style ={divStyle}>You Haven't Selected A Video</h1>}
+                        {this.props.playerUrl ? <SitePlayer url={this.props.playerUrl} poster={this.props.snippet.thumbnails.medium.url}/> : <h1 style ={divStyle}>You Haven't Selected A Video</h1>}
                     </div>
                     <div className="info-panel">
                     <div class="card">

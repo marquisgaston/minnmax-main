@@ -8,7 +8,11 @@ import {
     loadVideoInfo,
     checkIsPlaying,
     checkShowThumb
- } from './player'
+ } from './player';
+
+ import {
+     setSearchTerm
+ } from './search';
 
 export {
     getFeaturedContent,
@@ -16,5 +20,6 @@ export {
     changePlayerUrl,
     loadVideoInfo,
     checkIsPlaying,
-    checkShowThumb
+    checkShowThumb,
+    setSearchTerm
 }

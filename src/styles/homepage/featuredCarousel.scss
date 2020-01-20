@@ -65,11 +65,27 @@
         @media only screen and (max-width: $ipad-width) {
             background-color: rgba(0,0,0,0);
             span {
-                background-color: rgba(0,0,0,0.5);
+                background-color: rgba(0,0,0,0);
                 width: 2em;
                 height: 4em;
             }
         }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0);
+            width: 2em;
+            
+            @media only screen and (min-width: $ipad-width) {
+                background-color: rgba(0,0,0,0.0);
+            }
+    
+            @media only screen and (max-width: $ipad-width) {
+                background-color: rgba(0,0,0,0);
+                span {
+                    width: 2em;
+                    height: 4em;
+                }
+            }
+        } 
 
         @media only screen and (max-width: $phone-width) {
             background-color: rgba(0,0,0,0);

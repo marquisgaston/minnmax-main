@@ -20,78 +20,86 @@ class VideoCarousel extends Component {
     componentDidMount(){
         axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${this.props.playlistId}&maxResults=20&key=${process.env.REACT_APP_YT_API_KEY}`)
         .then( res => {
-            console.log("res",res.data.items)
-            var splitThree = res.data.items
-            var splitFour = res.data.items
-            
-            var splitOne = res.data.items
-            var splicedOne = []
-            var splicedThree = []
-            var splicedFour = []
-            
-            console.log("split&", splitFour, splitThree )
-            while (splitFour.length > 0) {
-                var newArray = splitFour.splice(0,4)
-                splicedFour.push(newArray)
+            var split = res.data.items
+            var pages4 = Math.round(split.length/4)
+            var pages3 = Math.round(split.length/3)
+            var pages1 = Math.round(split.length/1)
+            var spliced4 = []
+            var spliced3 = []
+            var spliced1 = []
+            var one = 0
+            var two = 4
+            while (pages4 > 0) {
+                var newArray = split.slice(one,two)
+                spliced4.push(newArray)
+                pages4 -= 1
+                one += 4
+                two += 4
             }
-            while (splitThree > 0){
-                var newArray2 = splitThree.splice(0,3)
-                splicedThree.push(newArray2)
+            var three = 0
+            var four = 3
+            while (pages3 > 0) {
+                var newArray = split.slice(three,four)
+                spliced3.push(newArray)
+                pages3 -= 1
+                three += 3
+                four += 3
             }
-            while (splitOne > 0) {
-                var newArray3 = splitOne.splice(0,1)
-                splicedOne.push(newArray3)
+            var five = 0
+            var six = 1
+            while (pages1 > 0) {
+                var newArray = split.slice(five,six)
+                spliced1.push(newArray)
+                pages1 -= 1
+                five += 1
+                six += 1
             }
+            console.log(pages4, "pages", spliced4, "spliced")
             this.setState({
-                videoObjMain: splicedFour,
-                videoObjTablet: splicedThree,
-                videoObjMobile: splicedOne
+                videoObjMain: spliced4,
+                videoObjTablet: spliced3,
+                videoObjMobile: spliced1
             })
+            
+
+
+            // var splitFour = res.data.items
+            
+            // var splitOne = res.data.items
+            // var splicedOne = []
+            // var splicedThree = []
+            // var splicedFour = []
+            
+            // while (splitFour.length > 0) {
+            //     var newArray = splitFour.slice(0,4)
+            //     splicedFour.push(newArray)
+            // }
+            // while (splitThree > 0){
+            //     var newArray2 = splitThree.slice(0,3)
+            //     splicedThree.push(newArray2)
+            // }
+            // while (splitOne > 0) {
+            //     var newArray3 = splitOne.slice(0,1)
+            //     splicedOne.push(newArray3)
+            // }
+            // this.setState({
+            //     videoObjMain: splicedFour,
+            //     videoObjTablet: splicedThree,
+            //     videoObjMobile: splicedOne
+            // })
 
         })
             .catch(error => {
                 console.log("error", error)
             })
-            console.log("four", this.state.videoObjMain, "three", this.state.videoObjTablet, "one", this.state.videoObjMobile)
     }
     render() { 
         
         const renderContent =() => {
-            // if (this.props.windowWidth < 412){
-            //     // return this.state.videoObjMobile.map(page => {
-            //     //     return (
-            //     //         <CarouselItem>
-            //     //             <div className="item-wrapper">
-            //     //                 {page.map(item => {
-            //     //                     return (
-            //     //                         <MiniCard item={item} cut={this.props.cut}/>
-            //     //                     )
-            //     //                 })}
-            //     //             </div>
-            //     //         </CarouselItem>
-            //     //     )
-            //     // })
-            // } 
-            // else 
-            // if (this.props.windowWidth < 770){
-            //     // return this.state.videoObjTablet.map(page => {
-            //     //     return (
-            //     //         <CarouselItem>
-            //     //             <div className="item-wrapper">
-            //     //                 {page.map(item => {
-            //     //                     return (
-            //     //                         <MiniCard item={item} cut={this.props.cut}/>
-            //     //                     )
-            //     //                 })}
-            //     //             </div>
-            //     //         </CarouselItem>
-            //     //     )
-            //     // })
-            // } else
-            //  {
+            if (this.props.windowWidth > 1024 ){
                 return this.state.videoObjMain.map(page => {
                     return (
-                        <CarouselItem>
+                        <Carousel.Item>
                             <div className="item-wrapper">
                                 {page.map(item => {
                                     return (
@@ -99,12 +107,41 @@ class VideoCarousel extends Component {
                                     )
                                 })}
                             </div>
-                        </CarouselItem>
+                        </Carousel.Item>
+                    )
+                })
+            } else 
+            if (this.props.windowWidth > 412 ){
+                return this.state.videoObjTablet.map(page => {
+                    return (
+                        <Carousel.Item>
+                            <div className="item-wrapper">
+                                {page.map(item => {
+                                    return (
+                                        <MiniCard item={item} cut={this.props.cut}/>
+                                    )
+                                })}
+                            </div>
+                        </Carousel.Item>
+                    )
+                })
+            } else 
+            if (this.props.windowWidth <= 411 ){
+                return this.state.videoObjMobile.map(page => {
+                    return (
+                        <Carousel.Item>
+                            <div className="item-wrapper">
+                                {page.map(item => {
+                                    return (
+                                        <MiniCard item={item} cut={this.props.cut}/>
+                                    )
+                                })}
+                            </div>
+                        </Carousel.Item>
                     )
                 })
             }
-
-        // }
+        }
 
         return ( 
             <div className="video-carousel">

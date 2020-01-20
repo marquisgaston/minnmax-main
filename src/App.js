@@ -13,6 +13,8 @@ import Navbar from './components/navbar/navbar';
 import NoMatch from "./components/noMatch";
 import Footer from './components/footer';
 import VideoPage from './components/player/videoPage';
+import Demo from './components/demo';
+import SearchPage from './components/searchPage/searchPage';
 
 const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
@@ -33,6 +35,8 @@ function App() {
                 <Switch>
                   <Route path="/" exact component={Homepage}/>
                   <Route path='/video-player/:slug' exact component={VideoPage}/>
+                  <Route path='/search/:slug' exact component={SearchPage}/>
+                  <Route path='/demo' exact component={Demo}/>
                   <Route component={NoMatch}/>
                 </Switch>
               </Router>
