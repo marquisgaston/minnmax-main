@@ -15,6 +15,10 @@ import Footer from './components/footer';
 import VideoPage from './components/player/videoPage';
 import Demo from './components/demo';
 import SearchPage from './components/searchPage/searchPage';
+import PlaylistBar from './components/playlist/playlistBar';
+
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
 
 const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
@@ -41,6 +45,7 @@ function App() {
                 </Switch>
               </Router>
             <Footer/>
+            {/* <PlaylistBar/> */}
           </header>
         </div>
       </Provider>

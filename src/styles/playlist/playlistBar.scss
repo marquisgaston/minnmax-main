@@ -1,0 +1,36 @@
+.playlist-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    bottom: 0;    
+    left: 70vw;
+    background-image: linear-gradient(white,lightgrey);
+    border: 1px solid $minnmax-green;
+    border-radius: 10px 10px 0px 0px;
+
+    .minus-button, .playlist-button {
+        background-color: $minnmax-green;
+        border-color: $minnmax-green;
+    }
+
+    .playlist-button {
+        
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .card {
+        width: 6em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .minus-button {
+        font-size: .8em;
+        height: 2em;
+        position: relative;
+        right: 47px;
+        top: 50px;
+    }
+
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { ThemeProvider } from 'react-bootstrap';
 
 class SearchPage extends Component {
     state = { 
@@ -8,7 +9,8 @@ class SearchPage extends Component {
         mainResults: [],
         allResults: [],
         filterMode: "all-results",
-        itemsPerPage: 10  
+        itemsPerPage: 10,
+        pageNumber: 0
      }
 
     filterSearchItems() {
@@ -60,14 +62,37 @@ class SearchPage extends Component {
 
         const renderContent = () => {
             if (this.state.filterMode === "all-results" ){
-                return this.state.allResults.map(item => {
-                    return <h2>{item.snippet.title}</h2>
+                var toDisplay = this.state.allResults.slice(this.state.pageNumber,this.state.pageNumber + this.state.itemsPerPage)
+                return toDisplay.map(item => {
+                    return (
+                    <div className="result-item">
+                        <div class="card" >
+                            <img class="card-img-top" src={item.snippet.thumbnails.medium.url}alt="Card image cap"/>
+                            <div class="card-body">
+                             <h5 class="card-title">{item.snippet.title}</h5>
+                    <p class="card-text" style={{fontSize: ".7em"}}>{item.snippet.description.substring(0,200)}...</p>
+                                <a href="#" class="btn btn-primary" style={{backgroundColor: "green"}} >Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    )
                 })
             }
         }
         return ( 
-            <div>
-                {renderContent()}
+            <div className="search-page-wrapper" style={{marginTop: "1em", display: "flex", flexDirection: "column", alignItems: "space-between", justifyContent: "center", minWidth: "69vw"}}>
+                <h2>Results for: "{this.state.searchTerm.join(" ")}"</h2>
+                <div style={{display: "flex", justifyContent: "space-between"}}>
+                    {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
+                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
+                </div>
+                <div className="search-results" style={{width: "65vw", marginTop: "1.2em", gridGap: "1em", display: "grid"}}>
+                    {renderContent()}
+                </div>
+                <div style={{display: "flex", justifyContent: "space-between", marginTop: "1.5em"}}>
+                    {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
+                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
+                </div>
             </div>
          );
     }

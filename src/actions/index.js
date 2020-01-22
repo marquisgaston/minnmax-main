@@ -7,7 +7,8 @@ import {
     changePlayerUrl,
     loadVideoInfo,
     checkIsPlaying,
-    checkShowThumb
+    checkShowThumb,
+    addToPlayList
  } from './player';
 
  import {
@@ -21,5 +22,6 @@ export {
     loadVideoInfo,
     checkIsPlaying,
     checkShowThumb,
-    setSearchTerm
+    setSearchTerm,
+    addToPlayList
 }

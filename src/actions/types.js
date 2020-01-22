@@ -6,6 +6,7 @@ export const CHANGE_PLAYER_URL = "CHANGE_PLAYER_URL";
 export const LOAD_VIDEO_INFO = 'LOAD_VIDEO_INFO';
 export const CHECK_IS_PLAYING = "CHECK_IS_PLAYING";
 export const CHECK_SHOW_THUMB = "CHECK_SHOW_THUMB";
+export const ADD_TO_PLAYLIST = "ADD_TO_PLAYLIST";
 
 //search
 export const SET_SEARCH_TERM = "SET_SEARCH_TERM";

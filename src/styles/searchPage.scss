@@ -1,0 +1,21 @@
+.search-page-wrapper {
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        min-width: 70vw;
+
+        @media only screen and (max-width: $ipad-width){
+            flex-direction: column;
+        }
+
+        .card-img-top {
+            max-width: 15em;
+            height: 100%;
+
+            @media only screen and (max-width: $ipad-width){
+                max-width: 23.3em;
+            }
+        }
+    }
+}

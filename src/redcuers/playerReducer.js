@@ -1,7 +1,8 @@
 import {
     CHANGE_PLAYER_URL,
     LOAD_VIDEO_INFO,
-    CHECK_IS_PLAYING
+    CHECK_IS_PLAYING,
+    ADD_TO_PLAYLIST
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -46,7 +47,9 @@ const INITIAL_STATE = {
             "videoId": "d5VyR9Q93ec"
         }
     },
-    videoIsPlaying: false
+    videoIsPlaying: false,
+    playlist: [],
+    playlistCounter: 0
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -65,6 +68,12 @@ export default function(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 videoIsPlaying: action.payload
+            }
+        case ADD_TO_PLAYLIST:
+            return {
+                ...state,
+                playlistCounter: state.playlistCounter ++,
+                playlist: state.playlist.concat({playlistItem: action.payload,id: state.playlistCounter})
             }
         default: return state;
     }

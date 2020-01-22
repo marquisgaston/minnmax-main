@@ -54,7 +54,6 @@ class VideoCarousel extends Component {
                 five += 1
                 six += 1
             }
-            console.log(pages4, "pages", spliced4, "spliced")
             this.setState({
                 videoObjMain: spliced4,
                 videoObjTablet: spliced3,

@@ -2,7 +2,8 @@ import {
     CHANGE_PLAYER_URL,
     LOAD_VIDEO_INFO,
     CHECK_IS_PLAYING,
-    CHECK_SHOW_THUMB
+    CHECK_SHOW_THUMB,
+    ADD_TO_PLAYLIST
 } from './types';
 
 export function changePlayerUrl(url) {
@@ -30,5 +31,12 @@ export function checkShowThumb(boolean){
     return ({
         type: CHECK_SHOW_THUMB,
         payload: boolean
+    })
+}
+
+export function addToPlayList(videoObject){
+    return ({
+        type: ADD_TO_PLAYLIST,
+        payload: videoObject
     })
 }
