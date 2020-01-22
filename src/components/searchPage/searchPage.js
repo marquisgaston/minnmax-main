@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { ThemeProvider } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+import history from '../../utils/history';
 
 class SearchPage extends Component {
     state = { 
@@ -65,16 +67,18 @@ class SearchPage extends Component {
                 var toDisplay = this.state.allResults.slice(this.state.pageNumber,this.state.pageNumber + this.state.itemsPerPage)
                 return toDisplay.map(item => {
                     return (
-                    <div className="result-item">
-                        <div class="card" >
-                            <img class="card-img-top" src={item.snippet.thumbnails.medium.url}alt="Card image cap"/>
-                            <div class="card-body">
-                             <h5 class="card-title">{item.snippet.title}</h5>
-                    <p class="card-text" style={{fontSize: ".7em"}}>{item.snippet.description.substring(0,200)}...</p>
-                                <a href="#" class="btn btn-primary" style={{backgroundColor: "green"}} >Watch Now</a>
+                        toDisplay.length > 0 ?
+                            <div className="result-item">
+                            <div class="card" >
+                                <img class="card-img-top" src={item.snippet.thumbnails.medium.url}alt="Card image cap"/>
+                                <div class="card-body">
+                                 <h5 class="card-title">{item.snippet.title}</h5>
+                                    <p class="card-text" style={{fontSize: ".7em"}}>{item.snippet.description.substring(0,200)}...</p>
+                                    <a href="#" class="btn btn-primary" style={{backgroundColor: "green"}} onClick={() => {history.push(`/video-player/${item.snippet.resourceId.videoId}`); this.props.loadVideoInfo(item.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`); this.props.addToPlayList(this.props.videoObject)}}>Watch Now</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> : 
+                            <h2>Your Search Return No Results</h2>
                     )
                 })
             }
@@ -82,6 +86,7 @@ class SearchPage extends Component {
         return ( 
             <div className="search-page-wrapper" style={{marginTop: "1em", display: "flex", flexDirection: "column", alignItems: "space-between", justifyContent: "center", minWidth: "69vw"}}>
                 <h2>Results for: "{this.state.searchTerm.join(" ")}"</h2>
+                <div>
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                     {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
                     {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
@@ -93,9 +98,15 @@ class SearchPage extends Component {
                     {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
                     {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
                 </div>
+                </div>
             </div>
          );
     }
 }
+function mapStateToProps(state){
+    return state
+}
+
+SearchPage = connect(mapStateToProps, actions)(SearchPage)
  
 export default SearchPage;

@@ -72,8 +72,7 @@ export default function(state = INITIAL_STATE, action) {
         case ADD_TO_PLAYLIST:
             return {
                 ...state,
-                playlistCounter: state.playlistCounter ++,
-                playlist: state.playlist.concat({playlistItem: action.payload,id: state.playlistCounter})
+                playlist: state.playlist.concat(action.payload)
             }
         default: return state;
     }
