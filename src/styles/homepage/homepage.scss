@@ -3,4 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (nax-width: $phone-width) {
+        margin-top: 4em;
+    }
 }
