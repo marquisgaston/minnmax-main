@@ -1,56 +1,65 @@
 
 
 .carousel-wrapper {
-    margin-top: 1em;
     display: flex;
     justify-content: center;
+    margin-top: 1.5em;
+
 
     .carousel, .slide {
-        width: 57em;
-        max-width: 90vw;
+        display: flex;
+        justify-content: center;
+        
+        @media only screen and (min-width: $ipad-width){
+            width: 45em;
+         }
 
         @media only screen and (max-width: $ipad-width) {
-            width: 29.5em;
         }
         
         @media only screen and (max-width: $phone-width){
-            width: 20em;
+           
         }
 
         .carousel-indicators {
-            @media only screen and (min-width: $phone-width){
-                display: none;
+            color: black;
+
+            @media only screen and (min-width: $ipad-width){
+                height: .1em;
             }
+
+            @media only screen and (max-width: $ipad-width){
+                height: .1em;
+            }
+
         }
 
         button {
             background-color: $minnmax-green;
-            border-color: white;
+            border-color: $minnmax-green;
+   
         }
 
         .carousel-inner {
             
 
             .card-img-wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+               
 
             @media only screen and (max-width: $ipad-width) {
-                    flex-direction: column;
-                }
+                  flex-direction: column;
 
+            }
                 img {
-                    width: 32.4em;
+                    width: 45vw;
+                    height: 100%;                    
 
                     @media only screen and (max-width: $ipad-width) {
-                        width: 27.1em;
-                        height: 14em;
+                        width: 70vw;
                     }
 
                     @media only screen and (max-width: $phone-width) {
-                        width: 19em;
-                        height: 47vw;
+                        width: 80vw;
                     }
                 }
             }
@@ -58,46 +67,38 @@
     }
 
     .carousel-control-prev, .carousel-control-next {
-        background-color: rgba(0,0,0,.2);
-        width: 2em;
         
         @media only screen and (min-width: $ipad-width) {
             &:hover {
-                background-color: $minnmax-green;
+               color: $minnmax-green;
             }
         }
 
         @media only screen and (max-width: $ipad-width) {
-            background-color: rgba(0,0,0,0);
+            height: 50%;
             span {
-                background-color: rgba(0,0,0,0);
-                width: 2em;
-                height: 4em;
+       
             }
         }
         .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: rgba(0,0,0,0);
-            width: 2em;
+            background-color: rgba(0,0,0,.4);
             
             @media only screen and (min-width: $ipad-width) {
-                background-color: rgba(0,0,0,0.0);
+               
             }
     
             @media only screen and (max-width: $ipad-width) {
-                background-color: rgba(0,0,0,0);
+              
                 span {
-                    width: 2em;
-                    height: 4em;
+                  
                 }
             }
         } 
 
         @media only screen and (max-width: $phone-width) {
-            background-color: rgba(0,0,0,0);
+            
             span {
-                background-color: black;
-                width: 7em;
-                height: 7em;
+             
             }
         }
     }

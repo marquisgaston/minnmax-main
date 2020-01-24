@@ -11,7 +11,7 @@ class Carousel extends Component {
         var two = one.splice(0,(Math.floor(one.length/2)))
 
         function newFunction (originalText) {
-            const filterWords = [" - The MinnMax Show", " - The Great GOTY Hunt", " - Max Spoilers", " - Let's Take Another Look At That", " - Big News", " - Max News"]
+            const filterWords = [" - The MinnMax Show", " - The Great GOTY Hunt", " - Max Spoilers", " - Let's Take Another Look At That", " - Big News", " - Max News", " - The Deepest Dive"]
             var TitleToBeRendered = originalText;
             var showTypeToBeRendered = ""
             

@@ -1,48 +1,47 @@
 .card-img-wrapper {
+    display:flex;
+    justify-content: center;
+
     .card {
-        width: 19em;
-        height: 18.3em;
+        width: 16em;
+        height: 16.1em;
+
 
         @media only screen and (max-width: $ipad-width) {
-            width: 90vw;
-            height: 18rem;
+            width: 70vw;
+            height: 12em;
         }
 
         @media only screen and (max-width: $phone-width) {
-            width: 18.8em;
+            width: 80vw;
+           height: 16em;
 
         }
         .card-header {
+            font-size: .7em;
 
             @media only screen and (max-width: $ipad-width){
-                font-size: 0.8em;
+                
             }
             
-        }
-
-        .card-header {
-
-            @media only screen and (max-width: $ipad-width){
-                font-size: 0.7em;
-            }
         }
 
         .card-body {
 
             .card-title {
+                font-size: .6em;
 
-                @media only screen and (max-width: $ipad-width){
+                @media only screen and (max-width: $phone-width){
                     display: none;
                 }
 
             }
 
             .card-text {
-                font-size: 0.55em;
+               font-size: .6em;
 
-                @media only screen and (max-width: $ipad-width){
-                    margin-top: -.7em;
-                    font-size: 0.5em;
+                @media only screen and (max-width: $phone-width){
+                    font-size: .6em;
                 }
             }
         }

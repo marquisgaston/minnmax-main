@@ -13,7 +13,7 @@ class CarouselCard extends Component {
             <Card.Body>
                 <Card.Title>{this.props.showType}</Card.Title>
                 <Card.Text>
-                {this.props.description}
+                {this.props.description.substring(0,340)}...
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
