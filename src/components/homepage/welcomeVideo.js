@@ -10,7 +10,7 @@ class WelcomeVideo extends Component {
                     <h3>INTRODUCING MINNMAX</h3>
                 </div>
                 {/* autoplay; */}
-                <ReactPlayer url ='ttps://youtu.be/BWgSxte-cMs'/>
+                <ReactPlayer playing="true" url ='ttps://youtu.be/BWgSxte-cMs' autoplay="true"/>
             
             </div>
          );

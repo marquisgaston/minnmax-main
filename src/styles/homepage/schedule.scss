@@ -1,0 +1,32 @@
+.schedule-wrapper {
+    margin-top: 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    img {
+        width: 11.9em;
+    }
+
+    @media only screen and (max-width: $ipad-width){
+        grid-template-columns: 1fr 1fr;
+
+        img {
+            width: 12.8em;
+        }
+    }
+
+    @media only screen and (max-width: 770px){
+        grid-template-columns: 1fr 1fr;
+
+        img {
+            width: 11.5em;
+        }
+    }
+
+    @media only screen and (max-width: $phone-width){
+        grid-template-columns: 1fr;
+
+        img {
+            width: 17.95em;
+        }
+    }
+}

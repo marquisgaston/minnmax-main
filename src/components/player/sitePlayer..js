@@ -10,9 +10,10 @@ class SitePlayer extends Component {
     onPlay={() => {this.props.checkIsPlaying(true);}}
     url={this.props.url} 
     pip={true} width="65vw" 
-    height="36.4vw" 
+    height="36.4vw"
+    playing={true} 
     controls={true} />
-    // playing={true}
+    
     }
 }
 function mapStateToProps (state) {
