@@ -74,15 +74,15 @@ class VideoPage extends Component {
                     </div>
                     <div className="info-panel">
                     <div class="card">
-                    <div className="card-img-wrapper">
-                        {this.props.videoIsPlaying === false ? null : <img class="card-img-top" src={this.props.snippet.thumbnails.medium.url}alt="Card cap" />}
-                    </div>
                         <div class="card-body">
                             <h5 class="card-title">{zero.TitleToBeRendered}</h5>
                             <p class="card-text">{this.props.snippet.description.substring(0,400)}...</p>
                         </div>
                         <div class="card-body">
                             {zero.showTypeToBeRendered ? <div class="list-group-item">{zero.showTypeToBeRendered}</div> : null}
+                        </div>
+                        <div className="card-img-wrapper">
+                            {this.props.videoIsPlaying === false ? null : <img class="card-img-top" src={this.props.snippet.thumbnails.medium.url}alt="Card cap" />}
                         </div>
                     </div>
                     </div>

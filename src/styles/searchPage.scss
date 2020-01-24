@@ -1,5 +1,10 @@
 .search-page-wrapper {
 
+    button, a {
+        background-color: $minnmax-green;
+        border-color: $minnmax-green;
+    }
+
     .card {
         display: flex;
         flex-direction: row;

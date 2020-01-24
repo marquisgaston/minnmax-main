@@ -6,6 +6,7 @@ import FeaturedContentCarousel from './featuredContentCarousel';
 import axios from 'axios';
 import WelcomeVideo from './welcomeVideo';
 import VideoCarousel from './videoCarousel';
+import Schedule from './schedule';
 
 class Homepage extends Component {
     constructor(){
@@ -43,6 +44,7 @@ class Homepage extends Component {
             <div className="homepage" style={{color:"black"}}>
                 <FeaturedContentCarousel/>
                 <WelcomeVideo/>
+                <Schedule/>
                 <VideoCarousel playlistId={"PL6FR1Lkt9IiPuk2Xvs6Z2psbgAHnLM4Ux"} title={"The MinnMax Show"} cut ={' - The MinnMax Show'}/>
                 <VideoCarousel playlistId={"PL6FR1Lkt9IiPAslT8rkVSprRXRL2A43Xn"} title={"The Great GOTY Hunt"} cut ={' - The Great GOTY Hunt'}/>
                 <VideoCarousel playlistId={"PL6FR1Lkt9IiP-N-OpNygquI4U_QG0efQk"} title={"The Deepest Dive"} cut ={' - The Deepest Dive'}/>

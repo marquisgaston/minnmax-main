@@ -74,7 +74,7 @@ class SearchPage extends Component {
                                 <div class="card-body">
                                  <h5 class="card-title">{item.snippet.title}</h5>
                                     <p class="card-text" style={{fontSize: ".7em"}}>{item.snippet.description.substring(0,200)}...</p>
-                                    <a href="#" class="btn btn-primary" style={{backgroundColor: "green"}} onClick={() => {history.push(`/video-player/${item.snippet.resourceId.videoId}`); this.props.loadVideoInfo(item.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`); this.props.addToPlayList(this.props.videoObject)}}>Watch Now</a>
+                                    <a href="#" class="btn btn-primary" onClick={() => {history.push(`/video-player/${item.snippet.resourceId.videoId}`); this.props.loadVideoInfo(item.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`); this.props.addToPlayList(this.props.videoObject)}}>Watch Now</a>
                                 </div>
                             </div>
                         </div> : 
@@ -88,15 +88,15 @@ class SearchPage extends Component {
                 <h2>Results for: "{this.state.searchTerm.join(" ")}"</h2>
                 <div>
                 <div style={{display: "flex", justifyContent: "space-between"}}>
-                    {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
-                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
+                    {this.state.pageNumber > 0 ? <button style={{color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
+                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
                 </div>
                 <div className="search-results" style={{width: "65vw", marginTop: "1.2em", gridGap: "1em", display: "grid"}}>
                     {renderContent()}
                 </div>
                 <div style={{display: "flex", justifyContent: "space-between", marginTop: "1.5em"}}>
-                    {this.state.pageNumber > 0 ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
-                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{backgroundColor: "green", color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
+                    {this.state.pageNumber > 0 ? <button style={{color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber - this.state.itemsPerPage})}}>Prev Page</button> : null}
+                    {this.state.pageNumber/this.state.itemsPerPage + 1 < (this.state.allResults.length/this.state.itemsPerPage) ? <button style={{color: "white", borderRadius: "5px"}} onClick={() => {this.setState({pageNumber: this.state.pageNumber + this.state.itemsPerPage, })}}>Next Page</button> : null}   
                 </div>
                 </div>
             </div>
