@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Carousel, CarouselItem } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -39,8 +39,8 @@ class VideoCarousel extends Component {
             var three = 0
             var four = 3
             while (pages3 > 0) {
-                var newArray = split.slice(three,four)
-                spliced3.push(newArray)
+                var newArray2 = split.slice(three,four)
+                spliced3.push(newArray2)
                 pages3 -= 1
                 three += 3
                 four += 3
@@ -48,8 +48,8 @@ class VideoCarousel extends Component {
             var five = 0
             var six = 1
             while (pages1 > 0) {
-                var newArray = split.slice(five,six)
-                spliced1.push(newArray)
+                var newArray3 = split.slice(five,six)
+                spliced1.push(newArray3)
                 pages1 -= 1
                 five += 1
                 six += 1

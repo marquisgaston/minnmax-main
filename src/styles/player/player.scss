@@ -1,84 +1,100 @@
 .video-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.2em;
+    margin-top: 1em;
 
-    .video-panel  {
+    @media only screen and (max-width: $ipad-width){
+        margin-top: 4em;
+    }
+    
+    .video-panel {
         display: flex;
-        max-width: 86vw;
+        width: 90vw;
 
         @media only screen and (max-width: $ipad-width){
             flex-direction: column;
         }
 
+        .video-player-wrapper {
+
+        }
+
         .info-panel {
-            color: black;
+
+            @media only screen and (max-width: $ipad-width){
+                margin-top: 4em;
+                height: 12em;
+            }
+
+            @media only screen and (max-width: 770px){
+                margin-top: 3em;
+            }
+
             .card {
-
+                display: grid;
                 height: 100%;
-                max-height: 23.2em;
+                align-content: space-between;
+                padding: 0 .5em;
 
-                @media only screen and (max-width: $ipad-width){
-                    height: 14em;
-                }
+                .card-body {
+                    margin-top: 1em;
 
-                .card-img-wrapper {
-                    
-                    @media only screen and (min-width: $ipad-width){
-                        height: 76em;
+                    .card-title {
+                        font-size: .8em;
+
+                        @media only screen and (max-width: $ipad-width){
+                            font-size: 1.2em;
+                        }
+
+                        @media only screen and (max-width: $ipad-width){
+                            margin-top: -1em;
+                        }
+
+                    }
+
+                    .card-text {
+                        font-size: .5em;
+
                     }
                 }
 
-                .card-img-top {
-                    height: 7.3em;
-                    margin: 0 .5em;
-                    margin-top: -3em;
+                .list-group-item {
 
                     @media only screen and (max-width: $ipad-width){
                         display: none;
                     }
                 }
 
-                .card-body {                   
-                    margin: 1.5em .7em;
-                }
-
-                .card-text {
-                    font-size: 0.55em;
+                .card-img-wrapper {
+                    margin-bottom: .5em;
 
                     @media only screen and (max-width: $ipad-width){
-                        font-size: auto;
-                    }
-
-                    @media only screen and (max-width: $ipad-width){
-                        font-size: auto;
+                        display: none;
                     }
                 }
-
-                .list-group-item {
-                    margin-top: -3.8em;
-                    font-size: 1em;
-                }
-            }
-
+            }   
         }
+    }
+}
 
         .video-player-wrapper {
             
             @media only screen and (max-width: $ipad-width){
-                width: 86vw;
-                height: 49vw;
+            
             }
 
             iframe {
+                width: 41em;
+
                 @media only screen and (max-width: $ipad-width){
-                    width: 86vw;
-                    height: 49vw;
+                    width: 89.7vw;
+                    height: 16em;
+                }
+
+                @media only screen and (max-width: 770px){
+                    height: 14.5em;
+                }
+
+                @media only screen and (max-width: $phone-width){
+                    height: 10.65em;
                 }
             }
         }
-
-    }
-}

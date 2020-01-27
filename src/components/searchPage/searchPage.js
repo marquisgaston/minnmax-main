@@ -70,11 +70,11 @@ class SearchPage extends Component {
                         toDisplay.length > 0 ?
                             <div className="result-item">
                             <div class="card" >
-                                <img class="card-img-top" src={item.snippet.thumbnails.medium.url}alt="Card image cap"/>
+                                <img class="card-img-top" src={item.snippet.thumbnails.medium.url} alt="Card cap"/>
                                 <div class="card-body">
                                  <h5 class="card-title">{item.snippet.title}</h5>
                                     <p class="card-text" style={{fontSize: ".7em"}}>{item.snippet.description.substring(0,200)}...</p>
-                                    <a href="#" class="btn btn-primary" onClick={() => {history.push(`/video-player/${item.snippet.resourceId.videoId}`); this.props.loadVideoInfo(item.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`); this.props.addToPlayList(this.props.videoObject)}}>Watch Now</a>
+                                    <div class="btn btn-primary" onClick={() => {history.push(`/video-player/${item.snippet.resourceId.videoId}`); this.props.loadVideoInfo(item.snippet); this.props.changePlayerUrl(`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`); this.props.addToPlayList(this.props.videoObject)}}>Watch Now</div>
                                 </div>
                             </div>
                         </div> : 

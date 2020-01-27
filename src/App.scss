@@ -10,6 +10,7 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: black;
+  font-family: 'Alata', sans-serif;
   
 }
 
@@ -25,6 +26,32 @@
     transform: rotate(360deg);
   }
 }
+
 @import "~video-react/styles/scss/video-react";
 @import './styles/variables.scss';
 @import './styles/main.scss';
+
+.patreon-page-wrapper {
+
+  @media only screen and (max-width: 700px){
+    padding-top: 3em;
+  }
+}
+
+.patreon-grid {
+  display: grid;
+  grid-gap: 1em;
+
+  .MuiCard-root {
+    padding: .7em;
+  }
+
+  @media only screen and (min-width: 768px){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  @media only screen and (max-width: 412px){
+    grid-template-columns: 1fr;
+  }
+}

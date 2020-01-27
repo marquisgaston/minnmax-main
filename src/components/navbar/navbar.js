@@ -4,7 +4,7 @@ import * as actions from "../../actions";
 import history from '../../utils/history';
 
 import LoginButton from '../loginButton';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 
 class MinnMaxNavbar extends Component {
     constructor() {
@@ -38,6 +38,7 @@ class MinnMaxNavbar extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" >
                 <Nav.Link onClick={() =>{history.push('/')}}>Home</Nav.Link>
+                <Nav.Link onClick={() =>{history.push('/patreon')}}>Patreon</Nav.Link>
                 {/* <Nav.Link href="#link">Link</Nav.Link> */}
                 {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

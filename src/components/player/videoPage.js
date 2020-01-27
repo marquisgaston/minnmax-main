@@ -3,6 +3,7 @@ import SitePlayer from "./sitePlayer.";
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import VideoCarousel from '../homepage/videoCarousel';
+import windowSize from 'react-window-size';
 
 import axios from 'axios';
 
@@ -38,9 +39,12 @@ class VideoPage extends Component {
     }
 
     render() {
+        var descLength = 350;
+        if (this.props.windowWidth < 1025 && this.props.windowWidth > 412){
+            descLength = 550;
+        }
+
         var zero = newFunction(this.props.snippet.title);
-        var one = zero.TitleToBeRendered.split(" ");
-        var two = one.splice(0,(Math.floor(one.length/2)))
 
         function newFunction (originalText) {
             const filterWords = [" - The MinnMax Show", " - The Great GOTY Hunt", " - Max Spoilers", " - Let's Take Another Look At That", " - Big News"]
@@ -68,23 +72,23 @@ class VideoPage extends Component {
         return ( 
             <div className="video-page-wrapper">
             {this.props.playerUrl ? 
-                <div className="video-panel">
+                <div className="video-panel" style={{display: "flex"}}>
                     <div className="video-player-wrapper">
-                        {this.props.playerUrl ? <SitePlayer url={this.props.playerUrl} poster={this.props.snippet.thumbnails.medium.url}/> : <h1 style ={divStyle}>You Haven't Selected A Video</h1>}
+                        {this.props.playerUrl ? <SitePlayer width="40em" url={this.props.playerUrl} poster={this.props.snippet.thumbnails.medium.url}/> : <h1 style ={divStyle}>You Haven't Selected A Video</h1>}
                     </div>
                     <div className="info-panel">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{zero.TitleToBeRendered}</h5>
-                            <p class="card-text">{this.props.snippet.description.substring(0,400)}...</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{zero.TitleToBeRendered}</h5>
+                                <p class="card-text">{this.props.snippet.description.substring(0,descLength)}...</p>
+                            </div>
+                            <div class="card-body">
+                                {zero.showTypeToBeRendered ? <div class="list-group-item">{zero.showTypeToBeRendered}</div> : null}
+                            </div>
+                            <div className="card-img-wrapper">
+                                {this.props.videoIsPlaying === false ? null : <img class="card-img-top" src={this.props.snippet.thumbnails.medium.url}alt="Card cap" />}
+                            </div>
                         </div>
-                        <div class="card-body">
-                            {zero.showTypeToBeRendered ? <div class="list-group-item">{zero.showTypeToBeRendered}</div> : null}
-                        </div>
-                        <div className="card-img-wrapper">
-                            {this.props.videoIsPlaying === false ? null : <img class="card-img-top" src={this.props.snippet.thumbnails.medium.url}alt="Card cap" />}
-                        </div>
-                    </div>
                     </div>
                 </div> : null }
                 {this.props.playerUrl ? 
@@ -99,4 +103,4 @@ function mapStateToProps (state) {
 
 VideoPage = connect(mapStateToProps, actions)(VideoPage)
  
-export default VideoPage;
+export default windowSize(VideoPage);
