@@ -39,6 +39,7 @@ class MinnMaxNavbar extends Component {
                 <Nav className="mr-auto" >
                 <Nav.Link onClick={() =>{history.push('/')}}>Home</Nav.Link>
                 <Nav.Link onClick={() =>{history.push('/patreon')}}>Patreon</Nav.Link>
+                <Nav.Link onClick={() =>{history.push('/schedule')}}>Schedule</Nav.Link>
                 {/* <Nav.Link href="#link">Link</Nav.Link> */}
                 {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

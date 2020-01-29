@@ -1,0 +1,30 @@
+.schedule-page-wrapper {
+
+    .main-title {
+        margin-top: 2em;
+        color: $minnmax-green;
+        padding: .4em;
+        background-image: linear-gradient(white, white, rgba(0,0,0,0.1));
+    }
+
+    .bonus-content {
+        width: 70vw;
+    }
+
+    .bonus-content-cards {
+        display: grid;
+        justify-content: space-around;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: .5em;
+
+        .card {
+            justify-content: space-between;
+            width: 10em;
+            padding: .4em 0 0 0;
+
+            img {
+                margin-top: .5em;
+            }
+        }
+    }
+}

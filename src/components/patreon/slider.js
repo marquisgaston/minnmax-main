@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
 import { Card } from '@material-ui/core';
-import windowSize from 'react-window-size';
 
 const useStyles = makeStyles({
   root: {

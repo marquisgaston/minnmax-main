@@ -16,6 +16,7 @@ import VideoPage from './components/player/videoPage';
 import Demo from './components/demo';
 import SearchPage from './components/searchPage/searchPage';
 import Patreon from './components/patreon/patreon';
+import SchedulePage from './components/schedulePage';
 
 
 const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
@@ -36,6 +37,7 @@ function App() {
                 <Switch>
                   <Route path="/" exact component={Homepage}/>
                   <Route path='/patreon' exact component={Patreon}/>
+                  <Route path="/schedule" exact component={SchedulePage}/>
                   <Route path='/video-player/:slug' exact component={VideoPage}/>
                   <Route path='/search/:slug' exact component={SearchPage}/>
                   <Route path='/demo' exact component={Demo}/>
