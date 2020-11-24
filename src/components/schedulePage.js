@@ -29,7 +29,7 @@ class SchedulePage extends Component {
             return (
                 <Card>
                     <h4>{item.snippet.title}</h4>
-                    <img src={item.snippet.thumbnails.medium.url}/>
+                    <img src={item.snippet.thumbnails.medium.url} alt="alt"/>
                 </Card>
             )
         })
